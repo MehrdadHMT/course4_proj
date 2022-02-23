@@ -54,6 +54,8 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
+        'django_celery_results',
+
         'movies',
         'gh',
     ]
@@ -164,6 +166,9 @@ class Dev(Configuration):
             "level": "DEBUG",
         },
     }
+
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
 
     # We should use values.SecretKey() instead of harcoding OMDB_KEY
     # but for now (for simplicity) we're doing this!
