@@ -173,3 +173,6 @@ class Dev(Configuration):
     # We should use values.SecretKey() instead of harcoding OMDB_KEY
     # but for now (for simplicity) we're doing this!
     OMDB_KEY = "d2b7a9d5"
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Ben", "ben@example.com")]
